@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "2323", // Tu contraseña
+    password: "n0m3l0", // Tu contraseña
     database: "Docktrack",
 });
 
