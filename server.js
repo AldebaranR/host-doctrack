@@ -1,9 +1,9 @@
+require('dotenv').config(); // Cargar variables de entorno
 const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const bcrypt = require('bcryptjs');
-
 
 const app = express();
 
@@ -12,8 +12,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Conexión a la base de datos
+// Verifica que las variables de entorno estén cargadas correctamente
+console.log("🟢 Cargando configuración de base de datos...");
+console.log("Host:", process.env.MYSQLHOST);
+console.log("Usuario:", process.env.MYSQLUSER);
+console.log("Base de datos:", process.env.MYSQLDATABASE);
+console.log("Puerto:", process.env.MYSQLPORT);
 
+// Conexión a la base de datos con manejo de errores y reconexión
 const db = mysql.createConnection({
     host: process.env.MYSQLHOST,
     user: process.env.MYSQLUSER,
@@ -22,12 +28,27 @@ const db = mysql.createConnection({
     port: process.env.MYSQLPORT
 });
 
+const conectarBD = () => {
+    db.connect((err) => {
+        if (err) {
+            console.error("❌ Error al conectar a la base de datos:", err);
+            setTimeout(conectarBD, 5000); // Reintenta la conexión en 5 segundos
+        } else {
+            console.log("✅ Conexión exitosa a la base de datos.");
+        }
+    });
+};
 
-db.connect((err) => {
-    if (err) {
-        console.error("Error al conectar a la base de datos:", err);
+conectarBD();
+
+// Si la conexión se pierde, reconectar
+db.on("error", (err) => {
+    console.error("❌ Error en la conexión con la base de datos:", err);
+    if (err.code === "PROTOCOL_CONNECTION_LOST") {
+        console.log("🔄 Reconectando...");
+        conectarBD();
     } else {
-        console.log("Conexión exitosa a la base de datos.");
+        throw err;
     }
 });
 
@@ -967,8 +988,10 @@ app.post("/modificar-tratamiento", (req, res) => {
 });
 
 
-// Iniciar el servidor
-const PORT = 3000;
+// Iniciar servidor
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
+
+module.exports = db;
