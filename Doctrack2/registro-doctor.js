@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Verificar si el correo ya existe
         try {
-            const checkCorreoResponse = await fetch("http://localhost:3000/check-correo", {
+            const checkCorreoResponse = await fetch("https://host-doctrack-production.up.railway.app/Doctor.html/check-correo", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
