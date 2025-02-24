@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #F2E6CF;
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+}
+header{
+    background-color: #254B5E;
+    margin: 10px;
+    border-radius: 20px;
+}
+.head{
+    display: flex;
+}
+.head img{
+    width: 330px;
+    height: auto;
+    margin-left: 40px;
+}
+.head h1{
+    color: #F2E6CF;
+    margin-left: 50px;
+    margin-right: 40px;
+    font-size: 18px;
+    margin-top: 52px;
+}
+.bs{
+    display: flex;
+    flex-direction: column;
+}
+.unos{
+    display: flex;
+}
+.cic{
+    width: 35px;
+    height: 35px;
+    border-radius: 90px;
+    background-color: #A7D0D2;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.cic2{
+    width: 20px;
+    height: 20px;
+    background-color: #A7D0D2;
+    border-radius: 90px;
+    margin-top: 39px;
+    margin-right: 10px;
+}
+.tex{
+    display: flex;
+}
+.tex .hov{
+    color: #A7D0D2;
+}
+a{
+    text-decoration: none;
+}
+.hov{
+    text-decoration:underline;
+}
+.hov1:hover{
+    color: #A7D0D2;
+}
+h2{
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 30px;
+    color: #254B5E;
+}
+h4{
+    color: #254B5E;
+    font-size: 21px;
+    margin-left: 40px;
+}
+
+.section2{
+    width: 50%;
+}
+
+
+.section2{
+    margin-top: 40px;
+    text-align: center;
+}
+.section1{
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+.textos{
+    width: 450px;
+    background-color: white;
+    height: 250px;
+    margin-top: 20px;
+    border-radius: 30px;
+    margin-left: 100px;
+}
+p{
+    color: #254B5E;
+    font-size: 20px;
+}
+.mot{
+    width: 400px;
+    background-color: white;
+    height: 210px;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    font-size: 20   px;
+    text-size-adjust: 450px;
+}
+.button{
+    background-color: #254B5E;
+    color: #F2E6CF;
+    border: none;
+    padding: 0;
+    font-size: 2%;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    color: whiteçç;
+}
+form{
+    margin-top: 50px;
+}
+.date{
+    border: none;
+    background-color: #254B5E;
+    color: white;
+    width: 300px;
+    height: 150px;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 20px;
+}
+.sal{
+    width: 150px;
+    height: 60px;   
+    background-color: #254B5E;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.sal h3{
+    color: white;
+    text-align: center;
+    padding-top: 18px;
+}
+.sal:hover{
+    background-color: #A7D0D2;
+}
+.come{
+        margin-left: 20px;
+        width: 350px;
+        margin-right: 20px;
+ }
+ @media (max-width: 768px){
+    .head{
+        flex-direction: column;
+        height: 400px;
+    }
+    .tex{
+        flex-direction: column;
+    }
+    .cic, .cic2{
+        display: none;
+    }
+    h2{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .bs{
+        flex-direction: column;
+    }
+    .textos{
+        width: 200px;
+        margin-top: 20px;
+    }
+    .section1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .section2{
+        flex-direction: column;
+    }
+
+    .come{
+        margin-left: 20px;
+        width: 350px;
+        margin-right: 20px;
+    }
+    p{
+        margin-left: 40%;
+    }
+    .mot{
+        width: 350px;
+        margin: 0px;
+        margin-left: 30px;
+    }
+    .button{
+        margin-left: 50%;
+    }
+      }
+      @media (min-width: 769px) and (max-width: 1174px) {
+        .head{
+            height: 300px;
+            width: 100%;
+        }
+        .head img{
+            margin-top: 20%;
+        }
+        .tex{
+            flex-direction: column;
+        }
+        .cic, .cic2{
+            display: none;
+        }
+        h2{
+            margin-left: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .bs{
+            margin-top: 90px;
+        }
+        p{
+            font-size: 30px;
+        }
+        .section2{
+            margin-left: 180px;
+        }
+        .section1{
+            margin-left: 230px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        h4{
+            text-align: center;
+            font-size: 25px;
+        }
+        .sal{
+            width: 200px;
+            height: 80px;
+            font-size: 30px;
+            margin-left: 380px;
+            margin-top: 50px;
+        }
+    }
+    @media (min-width: 1600px){
+        .head h1{
+            margin-left: 150px;
+        }
+        .cic{
+            margin-left: 0%;
+        }
+    
+        .mot{
+            margin-left: 23.5%;
+        }
+        .section1 p{
+            margin-left: -11%;
+            margin-bottom: 25px;
+        }
+        .section2 p{
+            margin-left: -5%;
+        }
+    }
+    @media(min-width:1500px){
+        .head h1{
+            margin-left: 150px;
+        }
+        .cic{
+            margin-left: 0%;
+        }
+        input{
+            margin-top: 20px;
+        }
+        .section1 p{
+            margin-left: -12%;
+        }
+        .section2 p{
+            margin-left: -12%;
+        }
+    }

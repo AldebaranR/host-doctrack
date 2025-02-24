@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal Doctor</title>
+    <link rel="stylesheet" href="PaginaD.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marmelad&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Sora:wght@100..800&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="Ima">
+                <img src="Imagenes/Captura_de_pantalla_2024-10-15_010848-removebg-preview.png" alt="">
+            </div>
+            <div class="tex">
+                <h1 class="un">Pagina-Principal-Doctor</h1>
+                <a href="PaginaT.html"><h1 class="hov">Tratamiento-Paciente</h1></a>
+            </div>
+            <div class="cic"></div>
+            <div class="cic2"></div>
+        </div>
+    </header>
+
+    <div class="otra">
+        <div class="section1">
+            <h3>Notas para el paciente</h3>
+            <form id="form-notas">
+                <label for="paciente-seleccionado">Seleccione un paciente:</label>
+                <select id="paciente-seleccionado" class="paci">
+                    <option value="" disabled selected>Seleccione un paciente</option>
+                    <!-- Opciones cargadas dinámicamente -->
+                </select>
+                <textarea placeholder="Escribe algo aqui...." id="nota-texto" class="env"></textarea>
+                <button type="submit" class="boten">Enviar</button>
+            </form>
+            
+    <div class="sal">
+        <a href="Doctor.html"><p>Salir</p></a>
+    </div>
+        </div>
+
+        <div class="dos">
+            <div class="bs">
+                <div class="section2">
+                    <a href="anadir.html">
+                        <div class="boton-modal">
+                            <label for="btn-modal" class="label1">Añadir</label>
+                        </div>
+                    </a>
+                </div>
+                <div class="section4">
+                    <a href="eliminarD.html">
+                        <div class="boton-modal3">
+                            <label for="btn-modal3" class="label3">Eliminar</label>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="section3">
+                <a href="modificarD.html">
+                    <div class="boton-modal2">
+                        <label for="btn-modal2" class="mob">Modificar</label>
+                    </div>
+                </a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-citas">
+                        <!-- Las citas se llenarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        async function cargarPacientes() {
+            try {
+                const response = await fetch("http://localhost:3000/obtener-pacientes");
+                const pacientes = await response.json();
+                const dropdown = document.getElementById("paciente-seleccionado");
+
+                pacientes.forEach(paciente => {
+                    const option = document.createElement("option");
+                    option.value = paciente.id_paciente;
+                    option.textContent = paciente.nombre_completo;
+                    dropdown.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Error al cargar pacientes:", error);
+            }
+        }
+
+        document.getElementById("form-notas").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const idPaciente = document.getElementById("paciente-seleccionado").value;
+            const nota = document.getElementById("nota-texto").value;
+
+            if (!idPaciente || !nota) {
+                alert("Por favor, seleccione un paciente y escriba una nota.");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3000/guardar-nota", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id_paciente: idPaciente, id_doctor: 1, nota }),
+                });
+
+                if (response.ok) {
+                    alert("Nota enviada con éxito.");
+                    document.getElementById("form-notas").reset();
+                } else {
+                    alert("Error al enviar la nota.");
+                }
+            } catch (error) {
+                console.error("Error al enviar la nota:", error);
+            }
+        });
+
+        document.getElementById("paciente-seleccionado").addEventListener("change", async (e) => {
+            const idPaciente = e.target.value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/get-citas/${idPaciente}`);
+                const citas = await response.json();
+                const tablaCitas = document.getElementById("tabla-citas");
+
+                tablaCitas.innerHTML = "";
+
+                citas.forEach(cita => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${cita.paciente}</td>
+                        <td>${cita.fecha.split('T')[0]}</td>
+                        <td>${cita.hora}</td>
+                        <td>${cita.motivo}</td>
+                    `;
+                    tablaCitas.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error al cargar citas:", error);
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", cargarPacientes);
+    </script>
+</body>
+</html>

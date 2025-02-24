@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro-Paciente</title>
+    <link rel="stylesheet" href="Paciente.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="Ima">
+                <img src="Imagenes/Captura_de_pantalla_2024-10-15_010848-removebg-preview.png" alt="Logo">
+            </div>
+            <div class="tex">
+                <h1>Registro-Paciente</h1>
+            </div>
+        </div>
+    </header>
+    <section class="bienvenida-seccion">
+        <div class="banner">
+            <span class="banner-text"><h6>Bienvenidos a DocTrack</h6></span>
+        </div>
+    </section>
+    <form id="registro-form">
+        <div class="section1">
+            <div class="nom">
+                <h3>Nombre(s)</h3>
+                <input type="text" id="nombre" class="input-line" placeholder="Escribe tu nombre aquí" required>
+            </div>
+            <div class="Ap">
+                <h3>Apellido Paterno</h3>
+                <input type="text" id="apellidoPaterno" class="input-line" placeholder="Escribe tu apellido paterno aquí" required>
+            </div>
+            <div class="Am">
+                <h3>Apellido Materno</h3>
+                <input type="text" id="apellidoMaterno" class="input-line" placeholder="Escribe tu apellido materno aquí" required>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="ced">
+                <h3>CURP</h3>
+                <input type="text" id="curp" class="input-line" placeholder="Escribe tu CURP aquí" maxlength="18" required>
+            </div>
+            <div class="correo">
+                <h3>Correo electrónico</h3>
+                <input type="email" id="correo" placeholder="Escribe tu correo aquí" class="corr" required>
+            </div>
+            <div class="ced">
+                <h3>Fecha de Nacimiento</h3>
+                <input type="date" id="fechaNacimiento" class="input-line" required>
+            </div>
+        </div>
+        <div class="section3">
+            <div class="tel">
+                <h3>Teléfono</h3>
+                <input type="text" id="telefono" class="input-line" placeholder="Escribe tu teléfono aquí" maxlength="10" required>
+            </div>
+            <div class="con1">
+                <h3>Contraseña</h3>
+                <input type="password" id="contrasena" class="input-line" placeholder="Escribe tu contraseña aquí" required>
+            </div>
+        </div>
+        <div class="button">
+            <button type="submit" id="btnRegistro">Registrarme</button>
+        </div>
+    </form>
+    <div class="Reg">
+        <a href="Inicio.html"><p>Regresar</p></a>
+    </div>
+    <script src="validacionpasiente.js"></script>
+</body>
+</html>

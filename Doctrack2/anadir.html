@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Cita</title>
+    <link rel="stylesheet" href="anadir.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marmelad&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Sora:wght@100..800&display=swap');
+    </style>
+</head>
+<body>
+     <!--Ventana Modal-->
+     <div class="container-modal">
+        <div class="content-modal">
+            <h6>Por favor rellena los campos</h6>
+            <form id="anadir-cita-form">
+                <p>Nombre del Paciente</p>
+                <select id="paciente-seleccionado" class="cont">
+                    <option value="" disabled selected>Seleccione un paciente</option>
+                    <!-- Opciones dinámicas desde la base de datos -->
+                </select>
+                <p>Fecha</p>
+                <input type="date" id="fecha-cita" class="cont">
+                <p>Hora</p>
+                <input type="time" id="hora-cita" class="cont">
+                <p>Motivo</p>
+                <textarea id="motivo-cita" class="cont" placeholder="Describa el motivo de la cita"></textarea>
+                <input type="submit" value="Agregar" class="ag">
+            </form>
+            <a href="PaginaD.html">
+            <div class="btn-cerrar">
+                <label for="btn-modal">Cerrar</label>
+            </div>
+            </a>
+        </div>
+    </div>
+    <script src="anadir.js"></script>
+</body>
+</html>
