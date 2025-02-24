@@ -55,7 +55,6 @@ db.on("error", (err) => {
 
 app.get("/", (req, res) => {
     res.send("🚀 Servidor funcionando correctamente en Railway");
-    app.use(express.static('Doctrack2')); // Sirve los archivos HTML, CSS, JS
 });
 
 
