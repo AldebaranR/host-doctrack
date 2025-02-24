@@ -40,6 +40,7 @@ const conectarBD = () => {
 };
 
 conectarBD();
+app.use(express.static('Doctrack2')); // Sirve los archivos HTML, CSS, JS
 
 // Si la conexión se pierde, reconectar
 db.on("error", (err) => {
