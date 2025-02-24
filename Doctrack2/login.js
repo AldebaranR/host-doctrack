@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Enviar los datos al servidor
-        fetch("http://localhost:3000/login", {
+        fetch("https://host-doctrack-production.up.railway.app/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

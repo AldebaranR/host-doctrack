@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Función para cargar las citas en la tabla
     async function cargarCitas() {
         try {
-            const response = await fetch(`http://localhost:3000/obtener-citas/${idDoctor}`);
+            const response = await fetch(`https://host-doctrack-production.up.railway.app/obtener-citas/${idDoctor}`);
             if (!response.ok) throw new Error("Error al obtener la lista de citas.");
 
             const citas = await response.json();

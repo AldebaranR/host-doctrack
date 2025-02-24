@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Enviar correo al servidor para verificar si ya está registrado
-        fetch("http://localhost:3000/check-correo", {
+        fetch("https://host-doctrack-production.up.railway.app/check-correo", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert("El correo ya está registrado. Por favor, usa uno diferente.");
                 } else {
                     // Proceder con el registro si el correo no existe
-                    return fetch("http://localhost:3000/register-paciente", {
+                    return fetch("https://host-doctrack-production.up.railway.app/register-paciente", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

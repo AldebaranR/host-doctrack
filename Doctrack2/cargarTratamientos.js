@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Cargar tratamientos
     async function cargarTratamientos() {
         try {
-            const response = await fetch("http://localhost:3000/obtener-tratamientos");
+            const response = await fetch("https://host-doctrack-production.up.railway.app/obtener-tratamientos");
             if (!response.ok) throw new Error("Error al obtener la lista de tratamientos.");
 
             const tratamientos = await response.json();

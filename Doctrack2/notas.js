@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/guardar-nota", {
+            const response = await fetch("https://host-doctrack-production.up.railway.app/guardar-nota", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

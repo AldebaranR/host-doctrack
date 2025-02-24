@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Cargar pacientes en el dropdown
     async function cargarPacientes() {
         try {
-            const response = await fetch("http://localhost:3000/obtener-pacientes");
+            const response = await fetch("https://host-doctrack-production.up.railway.app/obtener-pacientes");
             if (!response.ok) throw new Error("Error al obtener la lista de pacientes.");
 
             const pacientes = await response.json();
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/modificar-cita", {
+            const response = await fetch("https://host-doctrack-production.up.railway.app/modificar-cita", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
