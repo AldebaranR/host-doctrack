@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro-Doctor</title>
+    <link rel="stylesheet" href="Doctor.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marmelad&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+        <div class="Ima">
+        <img src="Imagenes/Captura_de_pantalla_2024-10-15_010848-removebg-preview.png" alt="">
+        </div>
+        <div class="tex">
+            <h1>Registro-Doctor</h1>
+        </div>
+        <div class="cic"></div>
+        <div class="cic2"></div>
+        </div>
+    </header>
+    <section class="bienvenida-seccion">
+        <div class="banner">
+          <span class="banner-text"><h6>Bienvenidos a DocTrack</h6></span>
+        </div>
+      </section>
+    <form>
+        <div class="section1">
+            <div class="nom">
+                <h3>Nombre(s)</h3>
+                <input type="text" id="nombre" class="input-line" placeholder="Escribe tu nombre aquí">
+            </div>
+            <div class="Ap">
+                <h3>Apellido Paterno</h3>
+                <input type="text" id="apellido-p" class="input-line" placeholder="Escribe tu apellido paterno aquí"></div>
+            <div class="Am">
+                <h3>Apellido Materno</h3>
+                <input type="text" id="apellido-m" class="input-line" placeholder="Escribe tu apellido materno aquí">
+            </div>
+        </div>
+        <div class="section2">
+            <div class="es">
+                <h3>Especialidad</h3>
+                <select id="especialidad" name="especialidad" class="esp">
+                    <option value="ninguna">Ninguna</option>
+                    <option value="medicina_interna">Medicina Interna</option>
+                    <option value="pediatria">Pediatría</option>
+                    <option value="ginecologia_obstetricia">Ginecología y Obstetricia</option>
+                    <option value="cardiologia">Cardiología</option>
+                    <option value="neurologia">Neurología</option>
+                    <option value="dermatologia">Dermatología</option>
+                    <option value="oftalmologia">Oftalmología</option>
+                    <option value="otorrinolaringologia">Otorrinolaringología</option>
+                    <option value="psiquiatria">Psiquiatría</option>
+                    <option value="geriatria">Geriatría</option>
+                    <option value="cirugia_general">Cirugía General</option>
+                    <option value="neurocirugia">Neurocirugía</option>
+                    <option value="cirugia_cardiovascular">Cirugía Cardiovascular</option>
+                    <option value="cirugia_toracica">Cirugía Torácica</option>
+                    <option value="cirugia_plastica_reconstructiva">Cirugía Plástica y Reconstructiva</option>
+                    <option value="cirugia_ortopedica">Cirugía Ortopédica</option>
+                    <option value="cirugia_pediatrica">Cirugía Pediátrica</option>
+                    <option value="cirugia_oncologica">Cirugía Oncológica</option>
+                    <option value="endocrinologia">Endocrinología</option>
+                    <option value="nefrologia">Nefrología</option>
+                    <option value="gastroenterologia">Gastroenterología</option>
+                    <option value="hematologia">Hematología</option>
+                    <option value="infectologia">Infectología</option>
+                    <option value="oncologia">Oncología</option>
+                    <option value="alergologia_inmunologia">Alergología e Inmunología</option>
+                    <option value="reumatologia">Reumatología</option>
+                    <option value="neumologia">Neumología</option>
+                    <option value="medicina_fisica_rehabilitacion">Medicina Física y Rehabilitación</option>
+                    <option value="medicina_familiar">Medicina Familiar</option>
+                    <option value="medicina_preventiva">Medicina Preventiva</option>
+                    <option value="medicina_del_deporte">Medicina del Deporte</option>
+                    <option value="medicina_del_trabajo">Medicina del Trabajo</option>
+                    <option value="cuidados_paliativos">Cuidados Paliativos</option>
+                    <option value="genetica_medica">Genética Médica</option>
+                    <option value="medicina_urgencias">Medicina de Urgencias</option>
+                    <option value="anestesiologia">Anestesiología</option>
+                    <option value="radiologia">Radiología</option>
+                    <option value="patologia">Patología</option>
+                    <option value="medicina_nuclear">Medicina Nuclear</option>
+                    <option value="psicologia_clinica">Psicología Clínica</option>
+                    <option value="psicoanalisis">Psicoanálisis</option>
+                    <option value="neuropsicologia">Neuropsicología</option>
+                    <option value="terapia_ocupacional">Terapia Ocupacional</option>
+                </select>
+            </div>
+            <div class="ced">
+                <h3>Cedula o matrícula</h3>
+                <input type="text" id="cedula" class="input-line" placeholder="Escriba su cedula aquí">
+            </div>
+            <div class="correo">
+                <h3>Correo electronico</h3>
+                <input type="email" name="" id="correo-electronico" placeholder="Escriba su correo aqui" class="corr">
+            </div>
+        </div>
+        <div class="section3">
+            <div class="con1">
+                <h3>Contraseña</h3>
+                <input type="password" name="" id="password-1" class="cont">
+            </div>
+            <div class="con2">
+                <h3>Confirme la contraseña</h3>
+                <input type="password" name="" id="password-2" class="cont">
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="submit" id="registrar-btn">Registrarme</button>
+        </div>
+    </form>
+    <div class="Reg">
+        <a href="Inicio.html"><p>Regresar</p></a>
+      </div>
+    <script src="registro-doctor.js"></script>
+</body>
+</html>

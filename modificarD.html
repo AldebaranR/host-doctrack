@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Cita</title>
+    <link rel="stylesheet" href="modificar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marmelad&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Sora:wght@100..800&display=swap');
+    </style>
+</head>
+<body>
+    <!--Ventana Modal-->
+    <div class="container-modal2">
+        <div class="content-modal2">
+            <h6>Por favor rellena los campos para modificar la cita</h6>
+            <form id="form-modificar">
+                <p>Nombre del paciente</p>
+                <select id="paciente-seleccionado" class="cont">
+                    <option value="" disabled selected>Seleccione un paciente</option>
+                    <!-- Las opciones serán llenadas dinámicamente -->
+                </select>
+
+                <p>Fecha actual</p>
+                <input type="date" id="fecha-actual" class="cont" required>
+
+                <p>Fecha nueva</p>
+                <input type="date" id="fecha-nueva" class="cont">
+
+                <p>Hora actual</p>
+                <input type="time" id="hora-actual" class="cont" required>
+
+                <p>Hora nueva</p>
+                <input type="time" id="hora-nueva" class="cont">
+
+                <p>Motivo nuevo (opcional)</p>
+                <textarea id="motivo-nuevo" class="cont" placeholder="Escriba el nuevo motivo aquí..."></textarea>
+
+                <input type="submit" value="Modificar" class="ag">
+            </form>
+            <a href="PaginaD.html">
+                <div class="btn-cerrar2">
+                    <label for="btn-modal2">Cerrar</label>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="modificarD.js"></script>
+</body>
+</html>
