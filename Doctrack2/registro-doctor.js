@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Verificar si el correo ya existe
         try {
-            const checkCorreoResponse = await fetch("https://host-doctrack-production.up.railway.app/Doctor.html/check-correo", {
+            const checkCorreoResponse = await fetch("https://host-doctrack-production.up.railway.app/check-correo", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("https://host-doctrack-production.up.railway.app/Doctor.html/registro-doctor", {
+            const response = await fetch("https://host-doctrack-production.up.railway.app/registro-doctor", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
