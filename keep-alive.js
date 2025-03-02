@@ -1,5 +1,3 @@
-import fetch from "node-fetch"; // Cambia require() por import
-
 const keepAlive = () => {
     setInterval(async () => {
         try {
