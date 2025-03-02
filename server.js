@@ -1,4 +1,5 @@
 require('dotenv').config(); // Cargar variables de entorno
+require("./keep-alive");
 const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
@@ -57,6 +58,12 @@ app.get("/", (req, res) => {
     res.send("🚀 Servidor funcionando correctamente en Railway");
 });
 
+setInterval(() => {
+    db.query("SELECT 1", (err) => {
+        if (err) console.error("Error en keep-alive DB:", err);
+        else console.log("Keep-alive DB ejecutado");
+    });
+}, 600000); // Cada 10 minutos
 
 // Ruta para verificar si un correo ya existe
 app.post("/check-correo", (req, res) => {
